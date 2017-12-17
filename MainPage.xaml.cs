@@ -19,6 +19,10 @@ namespace MyLittleCalculator
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
+    /// This is My App "My Little Calculator" Ive always wanted to make a calculator
+    /// through code. It may be very basic but it is what i wanted to do. 
+    /// This is basically a pocket calculator hense the name, you never know when you need
+    /// to calculate something. Enjoy!
     /// </summary>
     public sealed partial class MainPage : Page
     {
@@ -36,18 +40,18 @@ namespace MyLittleCalculator
                 if(result.Text.Length == 1 && result.Text == "0")
                 {
                     result.Text = string.Empty;
-                }
+                }//inner if
                 result.Text += number;
-            }
+            }//outer if
             else
             {
                 if (number != 0)
                 {
                     result.Text += number;
-                }
-            }
+                }//inner if
+            }//else
         }
-
+        //math operation expression
         enum Operation { MINUS=1, PLUS=2, DIV=3, TIMES=4, NUMBER=5 }
         private void AddOperationToResult(Operation operation)
         {
@@ -64,7 +68,7 @@ namespace MyLittleCalculator
                 case Operation.PLUS: result.Text += "+"; break;
                 case Operation.DIV: result.Text += "/"; break;
                 case Operation.TIMES: result.Text += "x"; break;
-            }
+            }//switch
         }
 
         private void buttonPlus_Click(object sender, RoutedEventArgs e)
@@ -141,15 +145,17 @@ namespace MyLittleCalculator
         {
             AddOperationToResult(Operation.DIV);
         }
-
+        //used region to expand/collapse block of code 
         #region Equal
         private class Operand
         {
-            public Operation operation = Operation.NUMBER;
+            public Operation operation = Operation.NUMBER;//DEFAULT
             public double value = 0;
             public Operand left = null;
             public Operand right = null;
         }
+        //expression from result.Text then Build the Tree
+        //Operand for quantity
         private Operand BuildTreeOperand()
         {
             Operand tree = null;
@@ -161,7 +167,7 @@ namespace MyLittleCalculator
             string numberStr = string.Empty;
             foreach (char c in expression.ToCharArray())
             {
-                if (char.IsNumber(c) || c == '-' || numberStr == string.Empty && c == '=')
+                if (char.IsNumber(c) || c == '.' || numberStr == string.Empty && c == '-')
                 {
                     numberStr += c;
                 }
@@ -169,17 +175,18 @@ namespace MyLittleCalculator
                 {
                     AddOperandToTree(ref tree, new Operand() { value = double.Parse(numberStr) });
                     numberStr = string.Empty;
-                    Operation op = Operation.MINUS;
+                    Operation op = Operation.MINUS;//DEFAULT
                     switch (c)
                     {
                         case '-': op = Operation.MINUS; break;
                         case '+': op = Operation.PLUS; break;
                         case '/': op = Operation.DIV; break;
                         case 'x': op = Operation.TIMES; break;
-                    }
+                    }//switch
                     AddOperandToTree(ref tree, new Operand() { operation = op });
                 }
             }
+            //Last Number
             AddOperandToTree(ref tree, new Operand { value = double.Parse(numberStr) });
 
             return tree;
@@ -200,18 +207,18 @@ namespace MyLittleCalculator
                 }
                 else
                 {
-                    AddOperandToTree(ref tree.right, elem);
+                    AddOperandToTree(ref tree.right, elem);//Recursive
                 }
             }
         }
 
         private double Calc(Operand tree)
         {
-            if (tree.left == null && tree.right == null)
+            if (tree.left == null && tree.right == null)//number
             {
                 return tree.value;
             }
-            else
+            else //operation (+,-,x,/)
             {
                 double subResult = 0;
                 switch (tree.operation)
@@ -227,11 +234,11 @@ namespace MyLittleCalculator
         private void buttonEquals_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(result.Text)) return;
-            Operand tree = BuildTreeOperand();
+            Operand tree = BuildTreeOperand();//result.Text
 
-            double value = Calc(tree);
+            double value = Calc(tree);//calc final result
             result.Text = value.ToString();
         }
         #endregion
     }
-}
+}//end main xaml cs
