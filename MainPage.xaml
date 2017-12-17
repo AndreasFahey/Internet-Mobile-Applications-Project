@@ -8,26 +8,26 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="Title" HorizontalAlignment="Left" TextWrapping="Wrap" Text="My Little Calculator" VerticalAlignment="Top" Margin="112,51,0,0"/>
+        <TextBlock x:Name="Title" HorizontalAlignment="Left" TextWrapping="Wrap" Text="My Little Calculator" VerticalAlignment="Top" Margin="10,48,0,0" Width="340" FontStyle="Italic" FontSize="29"/>
         <TextBox 
             IsReadOnly="True"
-            x:Name="result" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,76,0,0" Width="340"/>
-        <Button Click="button7_Click" x:Name="button7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,113,0,0" Width="41"/>
-        <Button Click="button8_Click" x:Name="button8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,113,0,0" Width="41"/>
-        <Button Click="button9_Click" x:Name="button9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,113,0,0" Width="41"/>
-        <Button Click="buttonMultiply_Click" x:Name="buttonMultiply" Content="x" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,113,0,0" Width="41"/>
-        <Button Click="button4_Click" x:Name="button4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,150,0,0" Width="41"/>
-        <Button Click="button5_Click" x:Name="button5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,150,0,0" Width="41"/>
-        <Button Click="button6_Click" x:Name="button6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,150,0,0" Width="41"/>
-        <Button Click="buttonPlus_Click" x:Name="buttonPlus" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,150,0,0" Width="41"/>
-        <Button Click="button1_Click" x:Name="button1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,187,0,0" Width="41"/>
-        <Button Click="button2_Click" x:Name="button2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,187,0,0" Width="41"/>
-        <Button Click="button3_Click" x:Name="button3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,187,0,0" Width="41"/>
-        <Button Click="buttonMinus_Click" x:Name="buttonMinus" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,187,0,0" Width="41"/>
-        <Button Click="button0_Click" x:Name="button0" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,224,0,0" Width="41"/>
-        <Button Click="buttonClear_Click" x:Name="buttonClear" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,224,0,0" Width="41"/>
-        <Button Click="buttonEquals_Click" x:Name="buttonEquals" Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,224,0,0" Width="41"/>
-        <Button Click="buttonDivide_Click" x:Name="buttonDivide" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,224,0,0" Width="41"/>
+            x:Name="result" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,92,0,0" Width="340" Height="60" FontSize="30"/>
+        <Button Click="button7_Click" x:Name="button7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,159,0,0" Width="67" Height="77" Background="LightBlue" FontSize="30"/>
+        <Button Click="button8_Click" x:Name="button8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,159,0,0" Width="67" Height="77" Background="Pink" FontSize="30"/>
+        <Button Click="button9_Click" x:Name="button9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="154,159,0,0" Width="67" Height="77" Background="LightGreen" FontSize="30"/>
+        <Button Click="buttonMultiply_Click" x:Name="buttonMultiply" Content="x" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="226,159,0,0" Width="124" Height="77" Background="Orange" FontSize="45"/>
+        <Button Click="button4_Click" x:Name="button4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,241,0,0" Width="67" Height="75" Background="LightSalmon" FontSize="30"/>
+        <Button Click="button5_Click" x:Name="button5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,241,0,0" Width="67" Height="75" Background="BurlyWood" FontSize="30"/>
+        <Button Click="button6_Click" x:Name="button6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="154,241,0,0" Width="67" Height="75" Background="Lavender" FontSize="30"/>
+        <Button Click="buttonPlus_Click" x:Name="buttonPlus" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="126,404,0,0" Width="95" Height="77" Background="GreenYellow" FontSize="40"/>
+        <Button Click="button1_Click" x:Name="button1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,321,0,0" Width="67" Height="77" Background="BlueViolet" FontSize="30"/>
+        <Button Click="button2_Click" x:Name="button2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,321,0,0" Width="67" Height="77" Background="Chocolate" FontSize="30"/>
+        <Button Click="button3_Click" x:Name="button3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="154,321,0,0" Width="67" Height="77" Background="Yellow" FontSize="30"/>
+        <Button Click="buttonMinus_Click" x:Name="buttonMinus" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="226,321,0,0" Width="124" Height="77" Background="Red" FontSize="45"/>
+        <Button Click="button0_Click" x:Name="button0" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,403,0,0" Width="67" Height="77" Background="DarkKhaki" FontSize="30"/>
+        <Button Click="buttonClear_Click" x:Name="buttonClear" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,404,0,0" Width="39" Height="77" Background="Maroon" FontSize="28"/>
+        <Button Click="buttonEquals_Click" x:Name="buttonEquals" Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="226,404,0,0" Width="124" Height="77" Background="Blue" FontSize="45"/>
+        <Button Click="buttonDivide_Click" x:Name="buttonDivide" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="226,241,0,0" Width="124" Height="75" Background="Sienna" FontSize="37"/>
 
 
     </Grid>
